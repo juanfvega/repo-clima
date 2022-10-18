@@ -8,8 +8,11 @@ function App(){
 return (
         <div>
             <h1 
-            align='center'
-            >Weather</h1>
+                align='center'
+                
+            >
+                Weather
+            </h1>
             <GetGeoLocation />
         </div>
         

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import GetCurrentWeather from "./GetCurrentWeather";
-
+import CircularProgress from '@mui/material/CircularProgress';
 
 function GetGeoLocation(){
     const [coord, setCoord] = useState();
@@ -15,7 +15,7 @@ useEffect(() => {
 }, [])
 
 return(
-        <GetCurrentWeather props = {coord}/>
+        coord ? <GetCurrentWeather props = {coord}/> : <CircularProgress sx={{position:'absolute', left:'45%'}}/>
 );
 
 }

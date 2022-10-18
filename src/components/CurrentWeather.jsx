@@ -5,6 +5,9 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
+import Avatar from '@mui/material/Avatar';
+import Flag from 'react-world-flags'
+
 
 
 function CurrentWeather(props){
@@ -27,16 +30,27 @@ function CurrentWeather(props){
           image={`http://openweathermap.org/img/wn/${props.props.weather[0].icon}@2x.png`}
           alt="weather"
         />
+        <Avatar
+              sx={{ width: 24, height: 24 }}
+        >
+          <Flag code={props.props.sys.country}/>
+        </Avatar>
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
             {props.props.name}-{props.props.sys.country}
           </Typography>
           <Typography variant="body2" color="text.secondary">
             T: {props.props.main.temp} C°       H: {props.props.main.humidity}%
-            
+
           </Typography>
           <Typography variant="body2" color="text.secondary">
             ST: {props.props.feels_like} C°     W: {props.props.wind.speed}Km/h
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            {props.props.weather[0].main}
+          </Typography>
+          <Typography variant="body1" color="text.secondary">
+            {props.props.weather[0].description}
           </Typography>
         </CardContent>
       </CardActionArea>
