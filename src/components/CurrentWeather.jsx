@@ -12,7 +12,12 @@ function CurrentWeather(props){
 
     console.log(data)
     return(
-    <Card sx={{ maxWidth: 200, position:'relative', left:'45%'}}
+    <Card sx={{ 
+        maxWidth: 200,
+        position:'relative',
+        left:'43%'
+        }}
+        align='center'
         
     >
       <CardActionArea>

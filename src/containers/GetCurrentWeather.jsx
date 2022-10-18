@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import {API_KEY} from '../constants';
 import CurrentWeather from '../components/CurrentWeather';
+import CircularProgress from '@mui/material/CircularProgress';
+
 
 function GetCurrentWeather(props) {
     const[data, setData] = useState();
@@ -24,7 +26,8 @@ function GetCurrentWeather(props) {
     }, [props])
 
     return (
-        loading ? <CurrentWeather props={data}/> : "cargando..."
+        loading ? <CurrentWeather props={data}/> : <CircularProgress sx={{position:'absolute', left:'45%'}}/>
+
     );
 }
 
