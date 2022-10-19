@@ -1,7 +1,7 @@
 import React from "react";
-import GetGeoLocation from "../containers/GetGeoLocation";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
+import SwitchLocation from "./SwitchLocation";
 import  '../weather.css';
 
 function App(){
@@ -38,7 +38,7 @@ return (
                     Weather
                 </Typography>
             </ThemeProvider>
-            <GetGeoLocation />
+            <SwitchLocation />
 
         </div>
         

@@ -5,14 +5,14 @@ import CircularProgress from '@mui/material/CircularProgress';
 function GetGeoLocation(){
     const [coord, setCoord] = useState();
 
-useEffect(() => {
-    
-    navigator.geolocation.getCurrentPosition(
-        success => (setCoord(success.coords)),
-    
-      );
+    useEffect(() => {
+        
+        navigator.geolocation.getCurrentPosition(
+            success => (setCoord(success.coords)),
+        
+        );
 
-}, [])
+    }, [])
 
 return(
         coord ? <GetCurrentWeather props = {coord}/> : <CircularProgress sx={{position:'absolute', left:'45%'}}/>
