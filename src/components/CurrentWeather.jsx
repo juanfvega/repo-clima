@@ -4,57 +4,63 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import { CardActionArea, Grid } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Flag from 'react-world-flags'
 
 
 
 function CurrentWeather(props){
-        const [data, setData] = useState(props)
+    
 
-    console.log(data)
     return(
+    <Grid 
+      container
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+    >
     <Card sx={{ 
-        maxWidth: 200,
-        position:'relative',
-        left:'43%'
+        maxWidth: 350,
+        backgroundColor:"inherit"
         }}
         align='center'
-        
     >
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
+          height="200"
           image={`http://openweathermap.org/img/wn/${props.props.weather[0].icon}@2x.png`}
           alt="weather"
         />
-        <Avatar
-              sx={{ width: 24, height: 24 }}
-        >
-          <Flag code={props.props.sys.country}/>
-        </Avatar>
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {props.props.name}-{props.props.sys.country}
+        <Typography variant="h5" color="text.secondary" fontFamily="Roboto">
+              {props.props.name}
+          </Typography>
+          <Avatar
+               
+          >
+            <Flag code={props.props.sys.country}/>
+          </Avatar>
+        <CardContent> 
+        <Typography variant="h2" color="text.primary" fontFamily="Roboto">
+            T: {props.props.main.temp} C°
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            T: {props.props.main.temp} C°       H: {props.props.main.humidity}%
-
+            H: {props.props.main.humidity}%
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            ST: {props.props.feels_like} C°     W: {props.props.wind.speed}Km/h
+            ST: {props.props.feels_like} C°
           </Typography>
-          <Typography variant="body1" color="text.secondary">
-            {props.props.weather[0].main}
+          <Typography variant="body2" color="text.secondary">
+            W: {props.props.wind.speed}Km/h
           </Typography>
-          <Typography variant="body1" color="text.secondary">
+          <Typography variant="body2" color="text.secondary">
             {props.props.weather[0].description}
           </Typography>
         </CardContent>
       </CardActionArea>
     </Card>
+    </Grid>
     );
 
 
