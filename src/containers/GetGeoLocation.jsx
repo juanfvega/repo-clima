@@ -8,8 +8,7 @@ function GetGeoLocation(){
     useEffect(() => {
         
         navigator.geolocation.getCurrentPosition(
-            success => (setCoord(success.coords)),
-        
+            success => (setCoord(success.coords))        
         );
 
     }, [])

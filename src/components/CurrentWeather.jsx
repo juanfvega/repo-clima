@@ -10,8 +10,7 @@ import Flag from 'react-world-flags'
 
 
 
-function CurrentWeather(props){
-    
+function CurrentWeather({props}){
 
     return(
     <Grid 
@@ -30,32 +29,32 @@ function CurrentWeather(props){
         <CardMedia
           component="img"
           height="200"
-          image={`http://openweathermap.org/img/wn/${props.props.weather[0].icon}@2x.png`}
+          image={`http://openweathermap.org/img/wn/${props.weather[0].icon}@2x.png`}
           alt="weather"
         />
         <Typography variant="h5" color="text.secondary" fontFamily="Roboto">
-              {props.props.name}
+              {props.name}
           </Typography>
           <Avatar
                
           >
-            <Flag code={props.props.sys.country}/>
+            <Flag code={props.sys.country}/>
           </Avatar>
         <CardContent> 
         <Typography variant="h2" color="text.primary" fontFamily="Roboto">
-            T: {props.props.main.temp} C°
+            T: {props.main.temp.toFixed(1)} C°
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            H: {props.props.main.humidity}%
+            H: {props.main.humidity} %
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            ST: {props.props.feels_like} C°
+            ST: {props.main.feels_like.toFixed(1)} C°
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            W: {props.props.wind.speed}Km/h
+            W: {props.wind.speed.toFixed(1)} Km/h
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {props.props.weather[0].description}
+            {props.weather[0].description}
           </Typography>
         </CardContent>
       </CardActionArea>
