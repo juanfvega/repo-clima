@@ -3,6 +3,9 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Typography from '@mui/material/Typography';
 import SwitchLocation from "./SwitchLocation";
 import  '../weather.css';
+import CurrentWeather from "./CurrentWeather";
+import GetGeoLocation from "../containers/GetGeoLocation";
+import GetCurrentWeather from "../containers/GetCurrentWeather";
 
 function App(){
 
@@ -39,7 +42,6 @@ return (
                 </Typography>
             </ThemeProvider>
             <SwitchLocation />
-
         </div>
         
 );
